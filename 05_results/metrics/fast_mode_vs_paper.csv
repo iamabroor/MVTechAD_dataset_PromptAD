@@ -1,0 +1,13 @@
+metric,dataset,shot,ours_epoch100,paper_mean
+image,mvtec,1,86.12,94.6
+image,mvtec,2,86.63,95.7
+image,mvtec,4,87.75,96.6
+image,visa,1,82.21,86.9
+image,visa,2,81.08,88.3
+image,visa,4,83.38,89.1
+pixel,mvtec,1,92.18,95.9
+pixel,mvtec,2,93.23,96.2
+pixel,mvtec,4,93.21,96.5
+pixel,visa,1,92.13,96.7
+pixel,visa,2,92.81,97.1
+pixel,visa,4,93.48,97.4

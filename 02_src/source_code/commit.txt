@@ -1,0 +1,2 @@
+PENDING: paste the contents of ~/promptad/output/promptad_commit.txt from the AWS workspace here.
+This file is written automatically by the setup step (`git -C "$REPO" rev-parse HEAD`).

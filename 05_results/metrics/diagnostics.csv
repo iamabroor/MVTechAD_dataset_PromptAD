@@ -1,0 +1,5 @@
+run,setting,metric,dataset,shot,result,gap_to_paper
+main,"epoch 100, sorted file order",image,mvtec,1,86.12,-8.48
+A,"epoch 100, unsorted file order (SORT_TRAIN=0)",image,mvtec,1,85.46,-9.14
+B,"best of epochs 1,5,10,...,100 (test-set selection)",image,mvtec,1,93.43,-1.17
+B,"same run, epoch 100 value",image,mvtec,1,86.12,-8.48

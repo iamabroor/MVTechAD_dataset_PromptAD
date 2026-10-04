@@ -1,0 +1,14 @@
+# Issues encountered and solutions
+
+| # | Issue | Solution |
+|---|---|---|
+| 1 | MVTec AD download link in the released code / common forks (`mydrive.ch/.../420938113-1629952094/...`) returns HTTP 404. | Switched to the current working `mydrive.ch` link published in the `anomalib` project's `mvtecad.py` data module (`.../420938113-1629960298/...`). VisA's S3 link was already working. |
+| 2 | `install.sh` has a typo (`pip3 pip3 install ...`) on the line that installs torch, so the script fails. | Install torch explicitly with the correct CUDA 12.1 wheel index, before the rest of the dependencies (see `06_environment/environment_setup.md`). |
+| 3 | The k-shot training image indices (`seeds_*/selected_samples_per_run.txt`) are applied to a file list built from an **unsorted** `glob.glob`, so which physical files get used as the k shots is filesystem/OS-dependent and not reproducible across machines. | Sort the glob result before applying the indices (`SORT_TRAIN=1`), and record the exact files selected for every (dataset, class, shot) combination to `selected_train_images.txt`. Quantified impact: ≈0.7 AUROC points vs. the original unsorted order (Diagnostic A). |
+| 4 | The released training scripts evaluate on the test set after **every** epoch and keep the best, which is expensive to replicate faithfully (100 evaluations/run) and, more importantly, uses test-set labels to pick the reported epoch — a form of test-set leakage relative to a standard held-out evaluation. | Added an `EVAL_EPOCHS` environment variable so the evaluation (not the training) can be restricted to a chosen list of epochs — e.g. epoch 100 only (fast, ~1 min/run) or `1,5,10,...,100` (reproduces the paper's own protocol, ~1–3 min/run). Training itself is byte-for-byte unchanged either way (confirmed: two independent epoch-100-only runs gave identical results, 86.12). |
+| 5 | Train images are colour-converted BGR→RGB before being encoded by CLIP; test images are not (fed straight from `cv2.imread`, which is BGR). | Not patched — left as released, to keep results comparable to anyone else running the official code out-of-the-box. Documented here as a known upstream bug rather than silently "fixed", since fixing it would make this replication's numbers *not* comparable to other reported results that use the unpatched code. |
+| 6 | Playwright's Chromium was not found at its expected default install path when exporting the methodology diagram to PNG. | Used the pre-installed Chromium at `/opt/pw-browsers/chromium` via the `executablePath` launch option, rather than re-downloading a browser. |
+
+See `01_methodology/methodology.md` and `02_src/source_code/README.md` for how issues 3–5 relate
+to the method itself, and `07_replication_notes/implementation_notes.md` for their quantified
+effect on the reported numbers.

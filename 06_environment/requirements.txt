@@ -1,0 +1,26 @@
+# Pinned versions used for this replication (Python 3.10, CUDA 12.1).
+# Install torch first from the CUDA wheel index, then the rest (see environment_setup.md).
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+numpy==1.26.4
+opencv-python==4.10.0.84
+diffusers[torch]
+pycocotools
+matplotlib
+onnxruntime
+onnx
+ipykernel
+transformers
+addict
+yapf
+timm
+loguru
+tqdm
+scikit-image
+scikit-learn
+pandas
+tensorboard
+seaborn
+open_clip_torch
+SciencePlots

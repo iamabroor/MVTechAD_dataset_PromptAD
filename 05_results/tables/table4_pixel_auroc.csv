@@ -1,0 +1,5 @@
+Method,MVTec AD 1-shot,MVTec AD 2-shot,MVTec AD 4-shot,VisA 1-shot,VisA 2-shot,VisA 4-shot
+WinCLIP+ (paper),95.2±0.5,96.0±0.3,96.2±0.3,96.4±0.4,96.8±0.3,97.2±0.2
+PromptAD (paper),95.9±0.5,96.2±0.3,96.5±0.2,96.7±0.4,97.1±0.3,97.4±0.3
+PromptAD (ours) – best epoch*,–,–,–,–,–,–
+PromptAD (ours) – epoch 100,92.18,93.23,93.21,92.13,92.81,93.48

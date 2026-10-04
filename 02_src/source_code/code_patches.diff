@@ -1,0 +1,11 @@
+# PENDING: paste the contents of ~/promptad/output/code_patches.diff from the AWS workspace here.
+#
+# This file is produced automatically by `patch_code()` in 03_scripts/preprocessing.py
+# (ported from run_promptad.sh), via:
+#
+#   cd "$REPO" && for f in datasets/mvtec.py datasets/visa.py train_cls.py train_seg.py; do
+#       diff -u "$f.orig" "$f" || true
+#   done > code_patches.diff
+#
+# It is a plain unified diff against the pristine upstream files at the pinned commit
+# (see commit.txt) and documents exactly the three patches described in ./README.md.

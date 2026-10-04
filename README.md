@@ -58,6 +58,27 @@ Single AWS `g5.2xlarge` instance (1× NVIDIA A10G, 24 GB), Ubuntu 22.04, ~3 hour
 for the fast-mode sweep (162 runs across tasks × datasets × shots × classes) plus diagnostics.
 See [`06_environment/environment_setup.md`](06_environment/environment_setup.md).
 
+## Visualisations & Results
+
+### Comparison vs Paper
+<p align="center">
+  <img src="05_results/figures/comparison_vs_paper.png" width="80%">
+</p>
+
+### Qualitative Results (Figure 3)
+<p align="center">
+  <img src="05_results/figures/fig3_qualitative_best.png" width="48%">
+  <img src="05_results/figures/fig3_qualitative_random.png" width="48%">
+</p>
+
+### MVTec & VisA Results (Figure 8)
+<p align="center">
+  <img src="05_results/figures/fig8_mvtec_best.png" width="48%">
+  <img src="05_results/figures/fig8_mvtec_random.png" width="48%">
+  <img src="05_results/figures/fig8_visa_best.png" width="48%">
+  <img src="05_results/figures/fig8_visa_random.png" width="48%">
+</p>
+
 ## Status
 
 Results, figures and tables for the fast-mode sweep (fixed epoch 100) and the best-epoch
